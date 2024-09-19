@@ -55,3 +55,14 @@ titulo.addEventListener("click", function () {
 
 // addEventListener reage a interações do usuário
 // function pode ser declarada e nomeada separadamente, ou anonimamente no mesmo ()
+
+var botaoAdicionar = document.querySelector("#adicionar-paciente");
+botaoAdicionar.addEventListener("click", function(event){
+    event.preventDefault();
+    console.log("Botão foi clicado.");
+
+    var form = document.querySelector("#form-adiciona");
+    var nome = form.nome;
+})
+
+// event.preventDefaullt evita um comportamneto padrão
