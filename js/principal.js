@@ -48,3 +48,10 @@ for (var i = 0; i < pacientes.length; i++) {
         tdImc.textContent = imc.toFixed(2);
     }
 }
+
+titulo.addEventListener("click", function () {
+    console.log("Olá, eu fui clicado!");
+})
+
+// addEventListener reage a interações do usuário
+// function pode ser declarada e nomeada separadamente, ou anonimamente no mesmo ()
