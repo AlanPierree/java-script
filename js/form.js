@@ -11,6 +11,13 @@ botaoAdicionar.addEventListener("click", function (event) {
     var paciente = obtemPacienteDoFormulario(form);
     // Cria a tr e a td do paciente
     var pacienteTr = montaTr(paciente);
+    var erro = validaPaciente(paciente);
+
+    if(erro.length > 0){
+        var mensagemErro = document.querySelector("#mensagem-erro");
+        mensagemErro.textContent = erro;
+        return;
+    }
     
     if (!validaPaciente(paciente)) {
         console.log("Paciente inválido");
@@ -64,8 +71,8 @@ function montaTd(dado, classe) {
 
 function validaPaciente(paciente) {
     if (validaPeso(paciente.peso)) {
-        return true;
+        return "";
     } else {
-        return false;
+        return "Peso inválido";
     }
 }
